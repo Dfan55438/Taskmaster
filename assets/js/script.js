@@ -33,7 +33,6 @@ var loadTasks = function() {
 
   // loop over object properties
   $.each(tasks, function(list, arr) {
-    console.log(list, arr);
     // then loop over sub-array
     arr.forEach(function(task) {
       createTask(task.text, task.date, list);
@@ -79,6 +78,11 @@ $("#task-form-modal .btn-primary").click(function() {
     });
 
     saveTasks();
+    $(".list-group").on("click","p",function()
+    {
+      var text = $(this).text().trim();
+      console.log(text);
+    });
   }
 });
 
